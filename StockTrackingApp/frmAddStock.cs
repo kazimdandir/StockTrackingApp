@@ -25,7 +25,6 @@ namespace StockTrackingApp
 
         private void btn_addStock_Click(object sender, EventArgs e)
         {
-            //text.changed event validasyon kontrolü yap 
             try
             {
                 Product p = new Product();

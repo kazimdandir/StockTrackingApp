@@ -57,9 +57,10 @@ namespace StockTrackingApp
         public double ProductSalesPrice { get; set; }
 
         public static List<Product> StockList = new List<Product>();
-
+   
         public Product addProduct(Product product)
         {
+            StockList.Add(product);
             StockList.Add(product);
             return product;
         }

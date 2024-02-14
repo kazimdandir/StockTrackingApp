@@ -114,6 +114,7 @@
             this.txt_productCode.Name = "txt_productCode";
             this.txt_productCode.Size = new System.Drawing.Size(183, 27);
             this.txt_productCode.TabIndex = 1;
+            this.txt_productCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_productCode_KeyPress);
             // 
             // txt_productName
             // 
@@ -122,6 +123,7 @@
             this.txt_productName.Name = "txt_productName";
             this.txt_productName.Size = new System.Drawing.Size(183, 27);
             this.txt_productName.TabIndex = 2;
+            this.txt_productName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_productName_KeyPress);
             // 
             // txt_productCount
             // 
@@ -130,6 +132,7 @@
             this.txt_productCount.Name = "txt_productCount";
             this.txt_productCount.Size = new System.Drawing.Size(183, 27);
             this.txt_productCount.TabIndex = 3;
+            this.txt_productCount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_productCount_KeyPress);
             // 
             // txt_productPurchasePrice
             // 
@@ -138,6 +141,7 @@
             this.txt_productPurchasePrice.Name = "txt_productPurchasePrice";
             this.txt_productPurchasePrice.Size = new System.Drawing.Size(183, 27);
             this.txt_productPurchasePrice.TabIndex = 4;
+            this.txt_productPurchasePrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_productPurchasePrice_KeyPress);
             // 
             // txt_productSalePrice
             // 
@@ -146,6 +150,7 @@
             this.txt_productSalePrice.Name = "txt_productSalePrice";
             this.txt_productSalePrice.Size = new System.Drawing.Size(183, 27);
             this.txt_productSalePrice.TabIndex = 5;
+            this.txt_productSalePrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_productSalePrice_KeyPress);
             // 
             // btn_addStock
             // 

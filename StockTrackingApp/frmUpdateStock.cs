@@ -93,5 +93,36 @@ namespace StockTrackingApp
             txt_productPurchasePrice.Clear();
             txt_productSalePrice.Clear();
         }
+
+        #region TextBox Validations
+        private void txt_productCode_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void txt_productName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void txt_productCount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void txt_productPurchasePrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ',')
+                e.Handled = true;
+        }
+
+        private void txt_productSalePrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ',')
+                e.Handled = true;
+        }
+        #endregion
     }
 }

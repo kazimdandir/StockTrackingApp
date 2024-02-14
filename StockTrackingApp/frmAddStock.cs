@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace StockTrackingApp
 {
@@ -15,7 +16,6 @@ namespace StockTrackingApp
     {
         public frmAddStock()
         {
-
             InitializeComponent();
             this.TopMost = true;
         }
@@ -25,6 +25,7 @@ namespace StockTrackingApp
 
         private void btn_addStock_Click(object sender, EventArgs e)
         {
+            //text.changed event validasyon kontrolü yap 
             try
             {
                 Product p = new Product();
@@ -71,5 +72,36 @@ namespace StockTrackingApp
             txt_productPurchasePrice.Clear();
             txt_productSalePrice.Clear();
         }
+
+        #region TextBox Validations
+
+        private void txt_productCode_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+        private void txt_productName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void txt_productCount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void txt_productPurchasePrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ',')
+                e.Handled = true;
+        }
+        private void txt_productSalePrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ',')
+                e.Handled = true;
+        }
+
+        #endregion
     }
 }

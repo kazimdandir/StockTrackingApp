@@ -38,14 +38,14 @@ namespace StockTrackingApp
 
         private void btn_closeApp_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Uygulamadan çıkış yapmak istediğinize emin misiniz?", "Uyarı", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Uygulamadan çıkış yapmak istediğinize emin misiniz?", "Uyarı", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
                 Thread.Sleep(500);
                 Application.Exit();
             }
             else if (dialogResult == DialogResult.No)
-                MessageBox.Show("İşlemlerinize devam edebilirsiniz.", "Bilgi", MessageBoxButtons.OK);
+                MessageBox.Show("İşlemlerinize devam edebilirsiniz.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

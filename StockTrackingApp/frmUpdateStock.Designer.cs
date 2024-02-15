@@ -207,9 +207,9 @@
             this.btn_get.BackColor = System.Drawing.Color.LightGreen;
             this.btn_get.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_get.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btn_get.Location = new System.Drawing.Point(409, 121);
+            this.btn_get.Location = new System.Drawing.Point(409, 115);
             this.btn_get.Name = "btn_get";
-            this.btn_get.Size = new System.Drawing.Size(62, 27);
+            this.btn_get.Size = new System.Drawing.Size(62, 37);
             this.btn_get.TabIndex = 6;
             this.btn_get.Text = "Getir";
             this.btn_get.UseVisualStyleBackColor = false;

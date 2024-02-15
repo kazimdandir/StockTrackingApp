@@ -41,7 +41,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(387, 26);
+            this.label1.Location = new System.Drawing.Point(353, 29);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(248, 38);
             this.label1.TabIndex = 0;
@@ -54,7 +54,7 @@
             this.dataGV_stockList.Name = "dataGV_stockList";
             this.dataGV_stockList.RowHeadersWidth = 51;
             this.dataGV_stockList.RowTemplate.Height = 24;
-            this.dataGV_stockList.Size = new System.Drawing.Size(942, 490);
+            this.dataGV_stockList.Size = new System.Drawing.Size(852, 490);
             this.dataGV_stockList.TabIndex = 1;
             // 
             // btn_return
@@ -62,7 +62,7 @@
             this.btn_return.BackColor = System.Drawing.Color.SeaShell;
             this.btn_return.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_return.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btn_return.Location = new System.Drawing.Point(787, 607);
+            this.btn_return.Location = new System.Drawing.Point(697, 607);
             this.btn_return.Name = "btn_return";
             this.btn_return.Size = new System.Drawing.Size(182, 37);
             this.btn_return.TabIndex = 2;
@@ -88,7 +88,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.ClientSize = new System.Drawing.Size(998, 677);
+            this.ClientSize = new System.Drawing.Size(905, 677);
             this.Controls.Add(this.btn_newProductAdd);
             this.Controls.Add(this.btn_return);
             this.Controls.Add(this.dataGV_stockList);

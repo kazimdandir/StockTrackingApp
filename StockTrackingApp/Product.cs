@@ -49,18 +49,39 @@ namespace StockTrackingApp
         //            productSalesPrice = Math.Abs(value);
         //    }
         //}
-
+        public int Id { get; set; }
         public string ProductCode { get; set; }
         public string ProductName { get; set; }
         public int ProductCount { get; set; }
         public double ProductPurchasePrice { get; set; }
         public double ProductSalesPrice { get; set; }
 
-        public static List<Product> StockList = new List<Product>();
-   
+        private int _nextId = 1;
+        public Product()
+        {
+            if (StockList != null && StockList.Count > 0)
+                _nextId = StockList.Max(p => p.Id) +1;
+            Id = _nextId++;
+        }
+
+        public static List<Product> StockList = new List<Product>()
+        {
+            new Product() { Id = 1, ProductCode = "AB12345678", ProductName = "Mutfak Masası", ProductCount = 27, ProductPurchasePrice = 1050.49, ProductSalesPrice = 1500.87 },
+            new Product() { Id = 2, ProductCode = "CD23456789", ProductName = "TV Sehpası", ProductCount = 14, ProductPurchasePrice = 2047.69, ProductSalesPrice = 3056.78 },
+            new Product() { Id = 3, ProductCode = "EF34567890", ProductName = "Altın Bilezik", ProductCount = 56, ProductPurchasePrice = 7256.89, ProductSalesPrice = 11004.90 },
+            new Product() { Id = 4, ProductCode = "GH45678901", ProductName = "Dizüstü Bilgisayar", ProductCount = 39, ProductPurchasePrice = 27650.50, ProductSalesPrice = 32500.50 },
+            new Product() { Id = 5, ProductCode = "IJ56789012", ProductName = "Spor Ayakkabı", ProductCount = 83, ProductPurchasePrice = 1945.99, ProductSalesPrice = 2780.50 },
+            new Product() { Id = 6, ProductCode = "KL67890123", ProductName = "Platin Yüzük", ProductCount = 42, ProductPurchasePrice = 12150.05, ProductSalesPrice = 16350.45 },
+            new Product() { Id = 7, ProductCode = "MN78901234", ProductName = "Yoga Matı", ProductCount = 71, ProductPurchasePrice = 250.45, ProductSalesPrice = 375.85 },
+            new Product() { Id = 8, ProductCode = "OP89012345", ProductName = "Kablosuz Kulaklık", ProductCount = 20, ProductPurchasePrice = 4050.99, ProductSalesPrice = 5204.45 },
+            new Product() { Id = 9, ProductCode = "QR90123456", ProductName = "Şal", ProductCount = 65, ProductPurchasePrice = 350.05, ProductSalesPrice = 420.75 },
+            new Product() { Id = 10, ProductCode = "ST01234567", ProductName = "Egzersiz Topu", ProductCount = 91, ProductPurchasePrice = 150.75, ProductSalesPrice = 300.45 }
+        };
+
+        public static List<Product> DeletedStockList = new List<Product>();
+
         public Product addProduct(Product product)
         {
-            StockList.Add(product);
             StockList.Add(product);
             return product;
         }
@@ -104,6 +125,8 @@ namespace StockTrackingApp
 
             if (productToRemove == null)
                 return false;
+
+            DeletedStockList.Add(productToRemove);
 
             StockList.Remove(productToRemove);
 

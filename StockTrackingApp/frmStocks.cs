@@ -31,8 +31,8 @@ namespace StockTrackingApp
             dataGV_stockList.DataSource = null;
             dataGV_stockList.DataSource = pList;
 
-            if (pList.Count == 0)
-                MessageBox.Show("Herhangi bir ürün eklenmemiştir. Yeni ürün eklemek için 'Yeni Ürün Ekle' butonuna tıklayın.", "Uyarı", MessageBoxButtons.OK);
+            //if (pList.Count == 0)
+            //    MessageBox.Show("Herhangi bir ürün eklenmemiştir. Yeni ürün eklemek için 'Yeni Ürün Ekle' butonuna tıklayın.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void btn_newProductAdd_Click(object sender, EventArgs e)

@@ -23,16 +23,16 @@ namespace StockTrackingApp
 
         private void btn_updateStock_Click(object sender, EventArgs e)
         {
-            dialogResult = MessageBox.Show("Güncelleme yapmak istediğinize emin misiniz?", "Uyarı", MessageBoxButtons.YesNo);
+            dialogResult = MessageBox.Show("Güncelleme yapmak istediğinize emin misiniz?", "Uyarı", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (dialogResult == DialogResult.Yes)
             {
                 p.updateProductData(txt_productCode.Text, txt_productName.Text, int.Parse(txt_productCount.Text), Convert.ToDouble(txt_productPurchasePrice.Text), Convert.ToDouble(txt_productSalePrice.Text));
 
-                dialogResult = MessageBox.Show($"{txt_productName.Text} stoğu güncellendi. Yeni bir güncelleme yapmak ister misiniz?", "Bilgi", MessageBoxButtons.YesNo);
+                dialogResult = MessageBox.Show($"{txt_productName.Text} stoğu güncellendi. Yeni bir güncelleme yapmak ister misiniz?", "Bilgi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (dialogResult == DialogResult.Yes)
-                    MessageBox.Show("İşlemlerinize devam edebilirsiniz.", "Bilgi", MessageBoxButtons.OK);
+                    MessageBox.Show("İşlemlerinize devam edebilirsiniz.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 else if (dialogResult == DialogResult.No)
                 {
                     this.Close();
@@ -40,29 +40,29 @@ namespace StockTrackingApp
                 }
             }
             else if (dialogResult == DialogResult.No)
-                MessageBox.Show("İşlemlerinize devam edebilirsiniz.", "Bilgi", MessageBoxButtons.OK);
+                MessageBox.Show("İşlemlerinize devam edebilirsiniz.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btn_clearSelected_Click(object sender, EventArgs e)
         {
-            dialogResult = MessageBox.Show("Girdiğiniz bilgileri temizlemek istediğinize emin misiniz?", "Uyarı", MessageBoxButtons.YesNo);
+            dialogResult = MessageBox.Show("Girdiğiniz bilgileri temizlemek istediğinize emin misiniz?", "Uyarı", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
                 ClearSelected();
             else if (dialogResult == DialogResult.No)
-                MessageBox.Show("İşlemlerinize devam edebilirsiniz.", "Bilgi", MessageBoxButtons.OK);
+                MessageBox.Show("İşlemlerinize devam edebilirsiniz.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btn_delete_Click(object sender, EventArgs e)
         {
-            dialogResult = MessageBox.Show($"{txt_productName.Text} stoğunu silmek istediğinize emin misiniz?", "Uyarı", MessageBoxButtons.YesNo);
+            dialogResult = MessageBox.Show($"{txt_productName.Text} stoğunu silmek istediğinize emin misiniz?", "Uyarı", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
                 p.deleteProductData(txt_productCode.Text);
 
-                dialogResult = MessageBox.Show($"{txt_productName.Text} stoğu silinmiştir. Güncelleme işlemlerinize devam etmek ister misiniz?", "Bilgi", MessageBoxButtons.YesNo);
+                dialogResult = MessageBox.Show($"{txt_productName.Text} stoğu silinmiştir. Güncelleme işlemlerinize devam etmek ister misiniz?", "Bilgi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (dialogResult == DialogResult.Yes)
-                    MessageBox.Show("İşlemlerinize devam edebilirsiniz.", "Bilgi", MessageBoxButtons.OK);
+                    MessageBox.Show("İşlemlerinize devam edebilirsiniz.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 else if (dialogResult == DialogResult.No)
                 {
                     this.Close();
@@ -110,18 +110,36 @@ namespace StockTrackingApp
         {
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
                 e.Handled = true;
+
+            if (e.KeyChar == '0' && txt_productCount.Text.Length == 0)
+            {
+                e.Handled = true;
+                MessageBox.Show("Ürün adedi 0 olamaz!", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void txt_productPurchasePrice_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ',')
                 e.Handled = true;
+
+            if (e.KeyChar == '0' && txt_productPurchasePrice.Text.Length == 0)
+            {
+                e.Handled = true;
+                MessageBox.Show("Ürün satış fiyatı 0 olamaz!", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void txt_productSalePrice_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ',')
                 e.Handled = true;
+
+            if (e.KeyChar == '0' && txt_productSalePrice.Text.Length == 0)
+            {
+                e.Handled = true;
+                MessageBox.Show("Ürün alış fiyatı 0 olamaz!", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
         #endregion
     }

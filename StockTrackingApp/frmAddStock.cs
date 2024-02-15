@@ -73,11 +73,11 @@ namespace StockTrackingApp
         }
 
         #region TextBox Validations
-
         private void txt_productCode_KeyPress(object sender, KeyPressEventArgs e)
         {
 
         }
+
         private void txt_productName_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (char.IsDigit(e.KeyChar))
@@ -100,7 +100,6 @@ namespace StockTrackingApp
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ',')
                 e.Handled = true;
         }
-
         #endregion
     }
 }

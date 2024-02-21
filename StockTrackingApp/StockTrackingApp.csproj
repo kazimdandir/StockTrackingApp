@@ -46,17 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmStocks.cs">
+    <Compile Include="frmProductsPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmStocks.Designer.cs">
-      <DependentUpon>frmStocks.cs</DependentUpon>
+    <Compile Include="frmProductsPage.Designer.cs">
+      <DependentUpon>frmProductsPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAddStock.cs">
+    <Compile Include="frmAddProductPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAddStock.Designer.cs">
-      <DependentUpon>frmAddStock.cs</DependentUpon>
+    <Compile Include="frmAddProductPage.Designer.cs">
+      <DependentUpon>frmAddProductPage.cs</DependentUpon>
     </Compile>
     <Compile Include="frmHomePage.cs">
       <SubType>Form</SubType>
@@ -64,26 +64,27 @@
     <Compile Include="frmHomePage.Designer.cs">
       <DependentUpon>frmHomePage.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmUpdateStock.cs">
+    <Compile Include="frmUpdateProductPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmUpdateStock.Designer.cs">
-      <DependentUpon>frmUpdateStock.cs</DependentUpon>
+    <Compile Include="frmUpdateProductPage.Designer.cs">
+      <DependentUpon>frmUpdateProductPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="IOperationService.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmStocks.resx">
-      <DependentUpon>frmStocks.cs</DependentUpon>
+    <EmbeddedResource Include="frmProductsPage.resx">
+      <DependentUpon>frmProductsPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAddStock.resx">
-      <DependentUpon>frmAddStock.cs</DependentUpon>
+    <EmbeddedResource Include="frmAddProductPage.resx">
+      <DependentUpon>frmAddProductPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmHomePage.resx">
       <DependentUpon>frmHomePage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmUpdateStock.resx">
-      <DependentUpon>frmUpdateStock.cs</DependentUpon>
+    <EmbeddedResource Include="frmUpdateProductPage.resx">
+      <DependentUpon>frmUpdateProductPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

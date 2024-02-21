@@ -9,62 +9,26 @@ namespace StockTrackingApp
 {
     public class Product
     {
-        //string productCode, productName;
-        //int productCount;
-        //double productPurchasePrice, productSalesPrice;
+        string productCode, productName;
+        int productCount;
+        double productPurchasePrice, productSalesPrice;
 
-        //public string ProductCode { get => productCode; set => productCode = value.ToUpper(); }
-        //public string ProductName { get => productName; set => productName = value.Substring(0, 1).ToUpper() + value.Substring(1).ToUpper(); }
-
-        //public int ProductCount
-        //{
-        //    get { return productCount; }
-        //    set
-        //    {
-        //        if (productCount == 0)
-        //            MessageBox.Show("Ürün adedi sıfır olmamalıdır!", "Uyarı", MessageBoxButtons.OK);
-        //        else
-        //            productCount = Math.Abs(value);
-        //    }
-        //}
-        //public double ProductPurchasePrice
-        //{
-        //    get { return productPurchasePrice; }
-        //    set
-        //    {
-        //        if (productPurchasePrice == 0)
-        //            MessageBox.Show("Ürün alış fiyatı sıfır olmamalıdır!", "Uyarı", MessageBoxButtons.OK);
-        //        else
-        //            productPurchasePrice = Math.Abs(value);
-        //    }
-        //}
-        //public double ProductSalesPrice
-        //{
-        //    get { return productSalesPrice; }
-        //    set
-        //    {
-        //        if (productSalesPrice == 0)
-        //            MessageBox.Show("Ürün satış sıfır olmamalıdır!", "Uyarı", MessageBoxButtons.OK);
-        //        else
-        //            productSalesPrice = Math.Abs(value);
-        //    }
-        //}
         public int Id { get; set; }
-        public string ProductCode { get; set; }
-        public string ProductName { get; set; }
-        public int ProductCount { get; set; }
-        public double ProductPurchasePrice { get; set; }
-        public double ProductSalesPrice { get; set; }
+        public string ProductCode { get => productCode; set => productCode = value.ToUpper(); }
+        public string ProductName { get => productName; set => productName = value.ToUpper(); }
+        public int ProductCount { get => productCount; set => productCount = Math.Abs(value); }
+        public double ProductPurchasePrice { get => productPurchasePrice; set => productPurchasePrice = value; }
+        public double ProductSalesPrice { get => productSalesPrice; set => productSalesPrice = value; }
 
         private int _nextId = 1;
         public Product()
         {
-            if (StockList != null && StockList.Count > 0)
-                _nextId = StockList.Max(p => p.Id) +1;
+            if (ProductList != null && ProductList.Count > 0)
+                _nextId = ProductList.Max(p => p.Id) +1;
             Id = _nextId++;
         }
 
-        public static List<Product> StockList = new List<Product>()
+        public static List<Product> ProductList = new List<Product>()
         {
             new Product() { Id = 1, ProductCode = "AB12345678", ProductName = "Mutfak Masası", ProductCount = 27, ProductPurchasePrice = 1050.49, ProductSalesPrice = 1500.87 },
             new Product() { Id = 2, ProductCode = "CD23456789", ProductName = "TV Sehpası", ProductCount = 14, ProductPurchasePrice = 2047.69, ProductSalesPrice = 3056.78 },
@@ -78,31 +42,31 @@ namespace StockTrackingApp
             new Product() { Id = 10, ProductCode = "ST01234567", ProductName = "Egzersiz Topu", ProductCount = 91, ProductPurchasePrice = 150.75, ProductSalesPrice = 300.45 }
         };
 
-        public static List<Product> DeletedStockList = new List<Product>();
+        public static List<Product> DeletedProductList = new List<Product>();
 
         public Product addProduct(Product product)
         {
-            StockList.Add(product);
+            ProductList.Add(product);
             return product;
         }
 
         public List<Product> getProductsList()
         {
-            return StockList;
+            return ProductList;
         }
 
         public Product getProduct(string productCode)
         {
-            Product selectedProductCode = StockList.FirstOrDefault(x => x.ProductCode == productCode);
+            Product selectedProductCode = ProductList.FirstOrDefault(x => x.ProductCode == productCode);
             return selectedProductCode;
         }
 
         public Product updateProductData(string productCode, string productName, int productCount, double productPurchasePrice, double productSalesPrice)
         {
-            Product productToUpdate = StockList.FirstOrDefault(x => x.ProductCode == productCode);
+            Product productToUpdate = ProductList.FirstOrDefault(x => x.ProductCode == productCode.ToUpper());
             if (productToUpdate == null)
             {
-                MessageBox.Show($"{ProductCode} kodlu ürün bulunamamıştır, ürün kodunu kontrol ediniz.");
+                MessageBox.Show($"{productCode} kodlu ürün bulunamamıştır, ürün kodunu kontrol ediniz.");
                 return null;
             }
             else
@@ -112,8 +76,8 @@ namespace StockTrackingApp
                 productToUpdate.ProductPurchasePrice = productPurchasePrice;
                 productToUpdate.ProductSalesPrice = productSalesPrice;
 
-                int index = StockList.IndexOf(productToUpdate);
-                StockList[index] = productToUpdate;
+                int index = ProductList.IndexOf(productToUpdate);
+                ProductList[index] = productToUpdate;
 
                 return productToUpdate;
             }
@@ -121,14 +85,14 @@ namespace StockTrackingApp
 
         public bool deleteProductData(string productCode)
         {
-            Product productToRemove = StockList.FirstOrDefault(p => p.ProductCode == productCode);
+            Product productToRemove = ProductList.FirstOrDefault(p => p.ProductCode == productCode.ToUpper());
 
             if (productToRemove == null)
                 return false;
 
-            DeletedStockList.Add(productToRemove);
+            DeletedProductList.Add(productToRemove);
 
-            StockList.Remove(productToRemove);
+            ProductList.Remove(productToRemove);
 
             return true;
         }

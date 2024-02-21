@@ -1,6 +1,6 @@
 ﻿namespace StockTrackingApp
 {
-    partial class frmUpdateStock
+    partial class frmUpdateProductPage
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUpdateStock));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUpdateProductPage));
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.btn_clearSelected = new System.Windows.Forms.Button();
@@ -94,7 +94,7 @@
             this.btn_updateStock.TabIndex = 7;
             this.btn_updateStock.Text = "Stok Güncelle";
             this.btn_updateStock.UseVisualStyleBackColor = false;
-            this.btn_updateStock.Click += new System.EventHandler(this.btn_updateStock_Click);
+            this.btn_updateStock.Click += new System.EventHandler(this.btn_updateProduct_Click);
             // 
             // txt_productSalePrice
             // 
@@ -139,7 +139,6 @@
             this.txt_productCode.Name = "txt_productCode";
             this.txt_productCode.Size = new System.Drawing.Size(183, 27);
             this.txt_productCode.TabIndex = 1;
-            this.txt_productCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_productCode_KeyPress);
             // 
             // label6
             // 

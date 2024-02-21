@@ -20,20 +20,20 @@ namespace StockTrackingApp
 
         private void btn_addStock_Click(object sender, EventArgs e)
         {
-            frmAddStock frmAS = new frmAddStock();
-            frmAS.ShowDialog();
+            frmAddProductPage frmAPP = new frmAddProductPage();
+            frmAPP.ShowDialog();
         }
 
         private void btn_stocks_Click(object sender, EventArgs e)
         {
-            frmStocks frmS = new frmStocks();
-            frmS.ShowDialog();
+            frmProductsPage frmPP = new frmProductsPage();
+            frmPP.ShowDialog();
         }
 
         private void btn_updateStock_Click(object sender, EventArgs e)
         {
-            frmUpdateStock frmUS = new frmUpdateStock();
-            frmUS.ShowDialog();
+            frmUpdateProductPage frmUPP = new frmUpdateProductPage();
+            frmUPP.ShowDialog();
         }
 
         private void btn_closeApp_Click(object sender, EventArgs e)

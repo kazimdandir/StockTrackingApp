@@ -1,6 +1,6 @@
 ﻿namespace StockTrackingApp
 {
-    partial class frmAddStock
+    partial class frmAddProductPage
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddStock));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddProductPage));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -114,7 +114,6 @@
             this.txt_productCode.Name = "txt_productCode";
             this.txt_productCode.Size = new System.Drawing.Size(183, 27);
             this.txt_productCode.TabIndex = 1;
-            this.txt_productCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_productCode_KeyPress);
             // 
             // txt_productName
             // 
@@ -200,7 +199,7 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "Fiyatlarda virgül kullanınız!";
             // 
-            // frmAddStock
+            // frmAddProductPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -222,7 +221,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "frmAddStock";
+            this.Name = "frmAddProductPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Stok Ekle";
             this.ResumeLayout(false);

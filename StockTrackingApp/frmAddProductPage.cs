@@ -17,7 +17,7 @@ namespace StockTrackingApp
         {
             InitializeComponent();
             this.TopMost = true;
-        } 
+        }
 
         DialogResult dialogResult;
         bool isAnyTextBoxEmpty;
